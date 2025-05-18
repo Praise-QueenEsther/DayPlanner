@@ -41,7 +41,7 @@
 
    .calender-btn button:hover{
     color: white;
-    background-color: blue;
+    background-color: darkslategray;
     transition: all 1s ease-in-out;
     border: none;
    }
@@ -57,4 +57,22 @@
     color: white;
    }
 
+ .monthDisplay{
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+ } 
+
+ .eventDiv{
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
   
+ }
+
+ .eventDiv p{
+   background-color: darkslategray;
+   border-radius: 5px;
+   color: white;
+   padding: 0 5px;
+ }
