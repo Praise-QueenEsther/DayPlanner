@@ -66,7 +66,7 @@ function getCalender(){
     const monthYearDisplay= new Date(year,month)
     const formatYearMonth=monthYearDisplay.toLocaleString("default",{month:"long",year:"numeric"})
     const conToText=document.createTextNode(formatYearMonth)
-    monthDisplay.innerHTML=""
+    monthDisplay.textContent=""
     monthDisplay.appendChild(conToText)
 
     const yrMonDay= new Date(year, month+1,0)
