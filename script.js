@@ -51,6 +51,15 @@ const events = [
     { id: 50, title: "Board Meeting", start: "2025-06-25", end: "2025-06-25", description: "Quarterly board update" },
   ];
 
+  const allEvents=()=>{
+    return new Promise((resolve)=>{
+        setTimeout(() => {
+            resolve(events)
+        }, 1000);
+
+    })
+  }
+
 
 const calender=document.getElementById("calender")
 const monthDisplay=document.getElementById("monthDisplay")
@@ -58,7 +67,7 @@ const monthDisplay=document.getElementById("monthDisplay")
 
 const currentMonth=new Date()
 
-function getCalender(){
+function getCalender(events){
     calender.innerHTML = "";
     const year=currentMonth.getFullYear()
     const month=currentMonth.getMonth()
@@ -120,14 +129,14 @@ function getCalender(){
 }
 
 
-getCalender()
+allEvents().then(getCalender)
 document.getElementById("prevButton").addEventListener("click",()=>{
     currentMonth.setMonth(currentMonth.getMonth()-1)
-    getCalender()
+    allEvents().then(getCalender)
 })
 document.getElementById("nextButton").addEventListener("click",()=>{
     currentMonth.setMonth(currentMonth.getMonth()+1)
-    getCalender()
+   allEvents().then(getCalender)
 })
 
 
